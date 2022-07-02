@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator wydatków</title>
+    <link rel="stylesheet" href="style.css">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">   
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-wallet"></i></h1>
+        <p>Twój osobisty miesieczny budzet.</p>
+    </header>
+
+    <main>
+        <section class="transactions">
+            <h2 class="title">Lista transakcji</h2>
+            <div class="transaction-list">
+                <div class="income-area">
+                    <h3>Przychód:</h3>
+                    
+                </div>
+                <div class="expenses-area">
+                    <h3>Wydatki:</h3>
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="options">
+            <div>
+                <h2 class="budget-title">Bilans wynosi:</h2>
+                <p class="available-money">0zł</p>
+            </div>
+            <div class="controls">
+                <button class="add-transaction"><i class="fas fa-plus"></i> Dodaj transakcję</button>
+                <button class="delete-all"><i class="far fa-trash-alt"></i> Usuń wszystko</button>
+            </div>
+            <div class="style-selection">
+                
+                <div class="color-buttons">
+                    <button class="light"></i></button>
+                    <button class="dark"></i></button>
+                </div>
+				
+					
+            </div>
+        </section>
+    </main>
+
+    <div class="add-transaction-panel">
+        <h2 class="title">Dodaj nową transakcję</h2>
+        <label for="name">Nazwa:</label>
+        
+        <input type="text" id="name" placeholder="Podaj nazwę transakcji"></input>
+
+        <label for="amount">Kwota:</label>
+        <small>(podaj kwotę transakcji, jeśli dodajesz wydatek, postaw znak minusa na początku kwoty) </small>
+        <input type="number" id="amount" min="0" oninput="validity.valid||(value='');">
+
+        <label for="category">Wybierz kategorię:</label>
+        
+        <select id="category" onchange="selectCategory()">
+            <option value="none" selected disabled></option>
+            <option value="income">[ + ] Przychód</option>
+            <option value="shopping" >[ - ] Wydatki</option>
+           
+        </select>
+
+        <div class="panel-buttons">
+            <button class="save"><i class="fas fa-save"></i> Zapisz</button>
+            <button class="cancel"><i class="far fa-window-close"></i> Anuluj</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
